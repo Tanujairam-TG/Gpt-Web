@@ -6,6 +6,7 @@ document.getElementById("send-btn").addEventListener("click", function() {
     sendMessage(userInput);
 });
 
+
 function sendMessage(message) {
     fetch(`https://nandha-api.onrender.com/ai/gpt/${encodeURIComponent(message)}`)
     .then(response => response.json())
@@ -15,6 +16,7 @@ function sendMessage(message) {
     })
     .catch(error => console.error("Error:", error));
 }
+
 
 function appendMessage(sender, message) {
     var chatWindow = document.getElementById("chat-window");
