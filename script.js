@@ -18,7 +18,7 @@ function sendMessage(message) {
     appendMessage("You", message);
     appendMessage("AI", "Writing response...");
     
-    fetch(`https://nandha-api.onrender.com/ai/gpt/${encodeURIComponent(message)}`)
+    fetch(`https://nandha-api.onrender.com/styletext?query=${encodeURIComponent(message)}`)
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -28,7 +28,7 @@ function sendMessage(message) {
     .then(data => {
         // Remove the waiting message
         document.getElementById("chat-window").lastChild.remove();
-        appendMessage("AI", data['content']);
+        appendMessage("AI", data);
     })
     .catch(error => console.error("Error:", error));
 }
