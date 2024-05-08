@@ -1,54 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>AI Chat</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Style</title>
     <style>
-        /* Basic styling for the chat interface */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+        #chat-container {
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ddd;
             background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         #chat-window {
             height: 300px;
-            overflow-y: scroll;
-            border: 1px solid #ccc;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
             padding: 10px;
         }
-        input[type="text"] {
-            width: calc(100% - 70px);
+        #user-input {
+            width: calc(100% - 90px);
             padding: 10px;
-            margin: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
+            margin-right: 10px;
         }
-        button {
+        #send-btn {
             padding: 10px 20px;
-            margin: 5px;
+            background-color: #5cb85c;
+            color: white;
             border: none;
-            background-color: #007bff;
-            color: #fff;
-            cursor: pointer;
         }
-        button:hover {
-            background-color: #0056b3;
+        #send-btn:hover {
+            background-color: #4cae4c;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div id="chat-container">
         <div id="chat-window"></div>
-        <input type="text" id="user-input" placeholder="Type your message...">
+        <input type="text" id="user-input" placeholder="Type your message here...">
         <button id="send-btn">Send</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Link to your JavaScript file -->
 </body>
-</html
+</html>
